@@ -15,7 +15,7 @@ int WhatCipher(const char* type, const char* ciph) {
 
 
 void mutableToUpper(char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     for (int i = 0; i < size; ++i) {
 	    if ((str[i] >= 'a') && (str[i] <= 'z')) {
 	        str[i] += ('A' - 'a');
@@ -24,7 +24,7 @@ void mutableToUpper(char* str) {
 }
 
 char* immutableToUpper(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     char* StrRes = malloc((sizeof(char) * (size + 1)));
     for (int i = 0; i < size; ++i) {
 	    if ((str[i] >= 'a') && (str[i] <= 'z')) {
@@ -39,7 +39,7 @@ char* immutableToUpper(const char* str) {
 
 
 void mutableToLower(char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     for (int i = 0; i < size; ++i) {
 	    if ((str[i] >= 'A') && (str[i] <= 'Z')) {
 	        str[i] += ('a' - 'A');
@@ -48,7 +48,7 @@ void mutableToLower(char* str) {
 }
 
 char* immutableToLower(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     char* StrRes = malloc((sizeof(char) * (size + 1)));
     for (int i = 0; i < size; ++i) {
 	    if ((str[i] >= 'A') && (str[i] <= 'Z')) {
@@ -63,7 +63,7 @@ char* immutableToLower(const char* str) {
 
 
 void mutableStrip(char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int left = 0;
     while (str[left] == ' ') {
 	    left++;
@@ -80,7 +80,7 @@ void mutableStrip(char* str) {
 }
 
 char* immutableStrip(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int left = 0;
     while (str[left] == ' ') {
 	    left++;
@@ -100,7 +100,7 @@ char* immutableStrip(const char* str) {
 
 
 void mutableAllStrip(char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int j = 0;
     for (int i = 0; i < size; ++i) {
 	if (str[i] != ' ') {
@@ -112,7 +112,7 @@ void mutableAllStrip(char* str) {
 }
 
 char* immutableAllStrip(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     char* StrRes = malloc((sizeof(char) * (size + 1)));
     int j = 0;
     for (int i = 0; i < size; ++i) {
@@ -127,7 +127,7 @@ char* immutableAllStrip(const char* str) {
 
 
 void mutableFilter(char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int j = 0;
     for (int i = 0; i < size; ++i) {
 	    if (((str[i] >= 'a') && (str[i] <= 'z')) || ((str[i] >= 'A') && (str[i] <= 'Z'))
@@ -141,10 +141,10 @@ void mutableFilter(char* str) {
 }
 
 char* immutableFilter(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int j = 0;
     char* StrRes = malloc((sizeof(char) * (size + 1)));
-    for (int i = 0; i < LenStr(str); ++i) {
+    for (int i = 0; i < strlen(str); ++i) {
 	    if (((str[i] >= 'a') && (str[i] <= 'z')) || ((str[i] >= 'A') && (str[i] <= 'Z'))
 	        || ((str[i] >= '0') && (str[i] <= '9')) || (str[i] == ' '))
         {
@@ -158,7 +158,7 @@ char* immutableFilter(const char* str) {
 
 
 int Number(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int SumNumber = 0;
     while ((str[SumNumber] >= '0') && (str[SumNumber] <= '9')) {
 	    ++SumNumber;
@@ -172,7 +172,7 @@ int Number(const char* str) {
 }
 
 int Word(const char* str) {
-    int size = lenstr(str);
+    int size = strlen(str);
     int SumLetter = 0;
     while (((str[SumLetter] >= 'a') && (str[SumLetter] <= 'z'))
         || ((str[SumLetter] >= 'A') && (str[SumLetter] <= 'Z')))
