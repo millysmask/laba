@@ -1,6 +1,9 @@
 #ifndef STRINGUTILS
 #define STRINGUTILS
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int WhatCipher(const char* type, const char* ciph);
 
